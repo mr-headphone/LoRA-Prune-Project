@@ -1,26 +1,23 @@
-# LoRA-Prune: A Hybrid Approach for Compressing and Adapting Language Models
+# LoRA-Prune: Hybrid Model Compression & Adaptation
 
-A project by **Muhammed E Cham (22314170)** that demonstrates how to make Large Language Models smaller and more efficient.
+**Author:** Muhammed E. Cham  
+**Focus:** Large Language Model (LLM) Optimization & Efficiency
 
-## Abstract
+### 📌 Project Overview
+LoRA-Prune is a hybrid framework designed to compress and adapt Large Language Models for resource-constrained environments. By combining **Structured Pruning** with **LoRA (Low-Rank Adaptation)**, this method reduces model size significantly while maintaining high performance.
 
-This paper proposes **LoRA-Prune**, a hybrid method that first compresses a base model using pruning and then adapts it using LoRA. Our experiments show that we can prune up to 25% of the `roberta-base` model with a negligible drop in accuracy (~0.12%), significantly reducing the total model size for deployment.
+### 🚀 Key Performance Metrics
+* **Compression:** Pruned up to **25%** of the RoBERTa-base model.
+* **Accuracy Preservation:** Achieved a negligible accuracy drop (~0.12%).
+* **Efficiency:** Reduced total model size from ~125M parameters to ~94M (Light) and ~62.5M (Aggressive).
 
-## How to Run
+### 🛠 Technical Stack
+* **Frameworks:** PyTorch, HuggingFace Transformers, PEFT, Accelerate.
+* **Evaluation:** Scikit-learn, Evaluate.
+* **Development:** AI-augmented workflow using GitHub Copilot for optimized refactoring.
 
-1.  **Install dependencies:**
-    ```bash
-    pip install transformers datasets torch accelerate evaluate peft scikit-learn
-    ```
-2.  **Run an experiment (e.g., 25% pruning):**
-    ```bash
-    python train.py --use_lora --pruning_amount 0.25
-    ```
-
-## Results on SST-2
-
-| Experiment Name         | Pruning Amount | Total Model Size (Approx.) | Accuracy |
-| ----------------------- | :------------: | :------------------------: | :------: |
-| **Baseline: LoRA**      |       0%       |         ~125 Million       | 91.86%   |
-| **LoRA-Prune (Light)**  |      25%       |          ~94 Million       | 91.74%   |
-| **LoRA-Prune (Aggressive)**|      50%       |         ~62.5 Million      | 91.40%   |
+### 📂 How to Execute
+1. Install dependencies:
+   `pip install transformers datasets torch accelerate evaluate peft scikit-learn`
+2. Run an experiment (25% pruning):
+   `python train.py --use_lora --pruning_amount 0.25`
